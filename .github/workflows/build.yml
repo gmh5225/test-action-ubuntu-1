@@ -21,7 +21,7 @@ jobs:
     - name: Setup build deps
       run: |
           sudo wget -qO /usr/local/bin/ninja.gz https://github.com/ninja-build/ninja/releases/latest/download/ninja-linux.zip \
-          && wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v3.2.9/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip
+          && wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v3.2.9/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip \
           && sudo gunzip /usr/local/bin/ninja.gz \
           && sudo chmod a+x /usr/local/bin/ninja \
           && sudo apt-get install build-essential make cmake \
