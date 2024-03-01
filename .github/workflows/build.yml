@@ -85,3 +85,13 @@ jobs:
         time cmake --build compiler-rt-build --config ${{ env.BUILD_TYPE }}
         cmake --build compiler-rt-build --config ${{ env.BUILD_TYPE }} --target install
         
+    - name: Package llvm
+      run: 
+          7z a test.zip install
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: test
+        path: test.zip
+        
