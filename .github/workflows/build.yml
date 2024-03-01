@@ -13,12 +13,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-22.04]
     env:
       BUILD_TYPE: Release
     steps:
 
     - name: Setup build deps
       run: |
-          sudo apt install libstdc++-11-dev-arm64-cross
+          sudo apt install g++-11-aarch64-linux-gnu
         
