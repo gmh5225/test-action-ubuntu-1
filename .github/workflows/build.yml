@@ -20,5 +20,5 @@ jobs:
 
     - name: Setup build deps
       run: |
-          sudo apt install g++-11-aarch64-linux-gnu
+          sudo apt -y install g++-11-aarch64-linux-gnu
         
