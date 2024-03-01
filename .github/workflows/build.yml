@@ -38,7 +38,7 @@ jobs:
     - name: Build runtimes
       run: |
         cmake -GNinja -Bruntimes-build \
-        -DCMAKE_INSTALL_PREFIX=install \
+        -DCMAKE_INSTALL_PREFIX=install2 \
         -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind" \
         -DCMAKE_C_COMPILER=$(pwd)/install/bin/clang \
         -DCMAKE_CXX_COMPILER=$(pwd)/install/bin/clang++ \
@@ -58,7 +58,7 @@ jobs:
     - name: Build compiler-rt
       run: |
         cmake -GNinja -Bcompiler-rt-build \
-        -DCMAKE_INSTALL_PREFIX=install \
+        -DCMAKE_INSTALL_PREFIX=install2 \
         -DCOMPILER_RT_BUILD_BUILTINS=ON \
         -DCOMPILER_RT_BUILD_LIBFUZZER=OFF \
         -DCOMPILER_RT_BUILD_MEMPROF=ON \
@@ -87,7 +87,7 @@ jobs:
         
     - name: Package llvm
       run: 
-          7z a test.zip install
+          7z a test.zip install2
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
